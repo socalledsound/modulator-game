@@ -69,10 +69,21 @@ class Level {
             return fund * (2 + idx/4)
         })
 
-        this.slowOscArr = Array.from({length: 6}, () => {
+        // this.slowOscArr = Array.from({length: 6}, () => {
 
-        })
+        // })
+        this.delay = new p5.Delay()
+
+
+        this.snare = new p5.Noise()
+        this.delay.process(this.snare, 0.12, .7, 2300);
+        this.snare.amp(0)
+        this.snare.start()
+        this.count = 0
         
+            this.snare.amp(0.25)
+            setTimeout(this.stopSnare, 500)
+    
     }
 
     render(){
@@ -85,7 +96,24 @@ class Level {
         })
     }
 
+    stopSnare = () => {
+        this.snare.amp(0)
+        //this.snare.stop()
+    }
+
     update(){
+        this.count++
+        if(this.count % 120 === 0){
+            this.snare.amp(0.25)
+            setTimeout(this.stopSnare, 250)
+        }
+        if(this.count % 30 === 0){
+            if(random(100) > 75){
+                this.snare.amp(0.5)
+                setTimeout(this.stopSnare, 10)
+            }
+            
+        }
         this.segments.forEach(segment => {
             segment.update()
         })

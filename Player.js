@@ -5,8 +5,10 @@ class Player{
         this.vel = createVector(0,0)
         this.acc = createVector(0,0)
         this.theta = 0
-        this.bumpSpeed = 3
+        this.bumpSpeed = 200/this.r
         this.schizo = false
+        this.moveSound = new p5.Oscillator('sin')
+        //this.
         
         
     }
@@ -97,7 +99,7 @@ this.vel.mult(this.bumpSpeed);
 
 game.level.modulator.freq(random(30,50));
 game.level.modulator.amp(random(-1000, 1000));
-game.level.osc.freq(game.level.freqs[l.id] * (1.0 - this.r/100) )
+game.level.osc.freq(game.level.freqs[l.id] * 40/this.r )
 game.level.osc.amp(1.0)
 setTimeout(this.stopSound, 250)
 

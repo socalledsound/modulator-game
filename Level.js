@@ -64,7 +64,10 @@ class Level {
                 m: mod
             })
         })
-        console.log(this.sosc)
+        this.freqs = Array.from({length: 20}, (el, idx) => {
+            const fund = 25
+            return fund * idx * 1.5
+        })
         
     }
 

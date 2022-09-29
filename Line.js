@@ -1,13 +1,14 @@
 class Line {
-    constructor(x1,y1, x2, y2, col){
-        this.p1 = createVector(x1, y1)
+    constructor(id, x1,y1, x2, y2, col){
+      this.id = id  
+      this.p1 = createVector(x1, y1)
         this.p2 = createVector(x2, y2)
         this.normal = this.calculateNormal()
         this.closest = null
         this.active = false
         this.col = col
         this.activeCol = 'yellow'
-        this.freq = random(100,700)
+        // this.freq = freq
     }
   
       // takes in two ends of a line as vectors

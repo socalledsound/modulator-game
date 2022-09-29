@@ -9,7 +9,7 @@ class Spiney {
     }
 
     render(){
-
+        
     }
 
     update(){

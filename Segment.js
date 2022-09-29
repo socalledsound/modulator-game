@@ -10,8 +10,9 @@ class Segment {
         this.p3 = p3
         this.p4 = p4
         // this.col = col
-        this.line1 = new Line(p1.x, p1.y, p2.x, p2.y, col1)
-        this.line2 = new Line(p3.x, p3.y, p4.x, p4.y, col2)
+        console.log(game.level)
+        this.line1 = new Line(idx, p1.x, p1.y, p2.x, p2.y, col1)
+        this.line2 = new Line(idx, p3.x, p3.y, p4.x, p4.y, col2)
         this.lines = [this.line1, this.line2]
     }
 

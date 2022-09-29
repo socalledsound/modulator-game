@@ -88,7 +88,7 @@ this.vel.mult(this.bumpSpeed);
 
 game.level.sosc[this.id].m.freq(random(0,50));
 game.level.sosc[this.id].m.amp(random(-100, 100));
-game.level.sosc[this.id].o.freq(game.level.freqs[l.id] * (1.0 - this.r/100) + random(0.1,0.3) )
+game.level.sosc[this.id].o.freq(game.level.freqs[l.id] * (0.5 - this.r/100) + random(0.1,0.3) )
 game.level.sosc[this.id].o.amp(1.0)
 setTimeout(this.stopSound, 1000)
         }

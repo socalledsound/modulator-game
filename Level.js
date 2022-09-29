@@ -65,8 +65,12 @@ class Level {
             })
         })
         this.freqs = Array.from({length: 20}, (el, idx) => {
-            const fund = 25
-            return fund * idx * 1.5
+            const fund = 120
+            return fund * (2 + idx/4)
+        })
+
+        this.slowOscArr = Array.from({length: 6}, () => {
+
         })
         
     }
